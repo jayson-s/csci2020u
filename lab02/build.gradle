@@ -1,17 +1,11 @@
 plugins{
 	id "application"
 }
-
 apply plugin: 'java'
-
-application {
-	mainClassName = javaMainClass
+repositories {
+	mavenCentral()
 }
- repositories {
-    mavenCentral()
- }
-​
- dependencies {
-   compile group: 'commons-validator', name: 'commons-validator', version: '1.4.1'
- }
- 
+dependencies {
+	compile group: 'commons-validator', name: 'commons-validator', version: '1.4.1'
+}
+mainClassName = "lab02.SimpleTest"

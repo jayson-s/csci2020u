@@ -1,6 +1,6 @@
 package lab02;
 ​
-public class Demo { 
+public class SimpleTest { 
     public static void main(String[] args) { 
         System.out.println("Hello World"); 
     } 
