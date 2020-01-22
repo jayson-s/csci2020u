@@ -4,8 +4,9 @@ plugins{
 
 apply plugin: 'java'
 
-mainClassName = "gradleDemo.demo"
-
+application {
+	mainClassName = javaMainClass
+}
  repositories {
     mavenCentral()
  }
@@ -13,3 +14,4 @@ mainClassName = "gradleDemo.demo"
  dependencies {
    compile group: 'commons-validator', name: 'commons-validator', version: '1.4.1'
  }
+ 
