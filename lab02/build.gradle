@@ -6,6 +6,6 @@ repositories {
 	mavenCentral()
 }
 dependencies {
-	compile group: 'commons-validator', name: 'commons-validator', version: '1.4.1'
+	compile 'org.apache.commons:commons-csv:1.7'
 }
-mainClassName = "lab02.SimpleTest"
+mainClassName = "lab02.CSVDemo"
