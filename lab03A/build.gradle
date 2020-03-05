@@ -1,0 +1,34 @@
+apply plugin: 'java'
+apply plugin: 'application'
+mainClassName = "lab03.CSVDemo"
+repositories {
+	jcenter()
+	mavenCentral()
+}
+dependencies {
+	compile 'org.slf4j:slf4j-api:1.7.25'
+	testCompile 'junit:junit:4:12'
+	implementation 'org.apache.commons:commons-csv:1.7'
+}
+sourceCompatibility = 1.8
+version = '1.0'
+jar {
+	manifest {
+		attributes 'Main-Class': '3lab03.CSVDemo',
+		'Implementation-Title': 'CSV-Demo',
+		'Implementation-Version': version
+	}
+} 
+buildscript {
+	repositories {
+		flatDir dirs: 'proguard6.2.2/lib'
+	}
+	dependencies {
+		classpath ':proguard'
+	}
+}
+task (minify, dependsOn: 'jar', type: proguard.gradle.ProGuardTask) {
+	configuration 'proguard.cfg'
+	injars 'build/libs/lab03A.jar'
+	outjars 'build/libs/lab03A.min.jar'
+}
